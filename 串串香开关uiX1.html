@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Settings</title>
+<!--H5gg official JS, I put it on my server/h5gg官方js，我放到我的服务器了-->
+<script type="text/javascript" src="https:/www.ccxhuan.top/h5gg.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #222;
+    }
+    
+    .box {
+  width: 450px;
+  height: 350px;
+  margin: auto;
+  position: absolute;
+  border-radius:20px; 
+  background: #E8E8E8;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-user-select:none;  
+
+ }
+.overlay {
+  width: 450px;
+  height: 50px;
+  border-radius:10px 10px 2px 2px;
+  align-items: center;
+  margin-bottom: 0;
+  background-color: #FFF;
+  box-shadow: 0 1px 8px #000;
+  -webkit-user-select: none;
+
+
+}
+
+.overlay2 {
+  width: 450px;
+  height: 280px;
+  border-radius: 0 0 10px 10px;
+  align-items: center;
+  background-color: #E8E8E8;
+  margin-top: 10px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; /* 添加移动设备上的平滑滚动效果 */
+  scroll-behavior: smooth; /* 添加平滑滚动效果 */
+  -webkit-user-select: none;
+}
+
+
+
+.setting::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 900%;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+
+.text {
+position: absolute;
+right: 45%;
+font-size: 15px;
+color: #000;
+  -webkit-user-select:none;
+   
+}
+
+
+
+
+h1 {
+text-align: center;
+
+font-size: 15px;
+color: #000;
+  -webkit-user-select:none;
+   
+}
+
+/*顶部图片*/
+ img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  top: 25px;
+  left: 40px;
+  transform: translate(-50%, -50%);
+  -webkit-user-select:none;
+}
+
+	/*顶部刷新图片*/
+ .my-new-image-style {
+   width: 60px;
+   height: 60px;
+   margin-bottom: 20px;
+   top: 25px;
+   left: 410px;
+   filter: grayscale(100%) sepia(100%) hue-rotate(0deg) saturate(1000%) brightness(10%) contrast(100%);
+
+   -webkit-user-select:none;
+  }
+
+
+
+	
+    .setting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1px;
+  margin-top: 1px;
+  margin-left: 15px;
+  background-color: #FFF;
+  padding: 5px;
+  width: 90%;
+  height: 11%;
+  position: relative; /* 添加相对定位，使伪元素定位相对于该元素 */
+  box-shadow: 0px px 0px red; /* 描边颜色 */
+  /*background-image: url('https://www.ccxhuan.top/favicon.ico');
+  background-repeat: no-repeat;
+  background-size: 5% auto;
+  background-position: 20px 10px;*/
+}
+
+
+.settingT {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0;
+  margin-left: 15px;
+  background-color: #FFF;
+  padding: 5px;
+  border-radius: 10px 10px 0 0;
+  width: 90%;
+  height: 11%;
+  /*background-image: url('https://www.ccxhuan.top/favicon.ico');
+  background-repeat: no-repeat;
+  background-size: 5% auto;
+  background-position: 20px 10px;*/
+}
+
+
+.settingW {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0;
+  margin-left: 15px;
+  background-color: #FFF;
+  padding: 5px;
+  border-radius: 0 0 15px 15px;
+  width: 90%;
+  height: 11%;
+  /*background-image: url('https://www.ccxhuan.top/favicon.ico');
+  background-repeat: no-repeat;
+  background-size: 5% auto;
+  background-position: 20px 10px;*/
+}
+
+
+
+
+    .setting-name {
+    text-align: center;
+      font-size: 15px;
+      margin-bottom: 10px;
+       margin-top: 12px;
+       margin-left: 5%;
+      color: #0079F2;
+    }
+    
+    
+    
+    
+    
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+      left: -5px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 35px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #30db5b;
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+    
+    
+    
+    
+
+  </style>
+</head>
+<body>
+<div class="box">
+ <div class="overlay">
+  <img id="tb"src="Your head portrait" alt="图标">
+ 
+ <img id="gb" class="my-new-image-style" src="A closed picture" alt="关闭">
+  <p class="text">串串香</p>
+  </div>
+<div class="overlay2">
+ <h1>串串香</h1>
+
+<!--Please set it to be the first one because it calls another CSS/请把他设置成第一个，因为他调用了另一个css-->
+<div class="settingT">
+    <span class="setting-name">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox" onclick="f1(this)">
+      <span class="slider round"></span>
+    </label>
+  </div>
+
+
+  <div class="setting">
+    <span class="setting-name">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox" onclick="f1(this)">
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <div class="setting">
+    <span class="setting-name">呵呵呵</span>
+    <label class="switch">
+      <input type="checkbox" onclick="f1(this)">
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <div class="setting">
+    <span class="setting-name">嘿嘿嘿</span>
+    <label class="switch">
+      <input type="checkbox" onclick="f1(this)">
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <div class="setting">
+    <span class="setting-name">yeeeeee</span>
+    <label class="switch">
+      <input type="checkbox" onclick="f1(this)">
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <div class="setting">
+    <span class="setting-name">88888</span>
+    <label class="switch">
+      <input type="checkbox" onclick="f1(this)">
+      <span class="slider round"></span>
+    </label>
+  </div>
+
+
+<!--Please set it to be the last one because it calls another CSS/请把他设置成最后一个，因为他调用了另一个css-->
+  <div class="settingW">
+    <span class="setting-name">88888</span>
+    <label class="switch">
+      <input type="checkbox" onclick="f1(this)">
+      <span class="slider round"></span>
+    </label>
+  </div>
+</div>
+  </div>
+<script>
+  //An example to teach you how to call JS/一个例子，教你怎么调用js
+  function f1(checkbox) {
+      if (checkbox.checked) {
+        // 执行函数1，Execute function 1
+        function1();
+      } else {
+        // 执行函数2，Execute function 2
+        function2();
+      }
+    }
+
+    function function1() {
+	alert('哈哈哈哈哈')	;
+
+    }
+
+    function function2() {
+  alert('嘿嘿嘿')	;	
+
+    }
+</script>
+
+  
+  
+</body>
+</html>
+
