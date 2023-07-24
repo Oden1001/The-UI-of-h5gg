@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Settings</title>
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      
+    }
+    
+    .box {
+  width: 450px;
+  height: 350px;
+  margin: auto;
+  position: absolute;
+  border-radius:20px; 
+  background: #000;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-user-select:none;  
+
+ }
+.overlay {
+  width: 450px;
+  height: 50px;
+  border-radius:20px 20px 0 0;
+  align-items: center;
+  margin-bottom: 0;
+  background-color: #000;
+  -webkit-user-select: none;
+
+
+}
+
+.overlay2 {
+  width: 450px;
+  height: 300px;
+  border-radius:0 0 20px 20px;
+  align-items: center;
+  background-color: #000;
+  overflow-y: scroll;
+  -webkit-user-select: none;
+
+
+}
+
+
+.text {
+position: absolute;
+right: 50%;
+font-size: 15px;
+color: #FFF;
+  -webkit-user-select:none;
+   
+}
+
+/*顶部图片*/
+ img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  top: 25px;
+  left: 40px;
+  transform: translate(-50%, -50%);
+  -webkit-user-select:none;
+}
+
+	/*顶部刷新图片*/
+ .my-new-image-style {
+   width: 60px;
+   height: 60px;
+   margin-bottom: 20px;
+   top: 25px;
+   left: 410px;
+   -webkit-user-select:none;
+  }
+
+
+
+	
+    .setting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 7px;
+  margin-left: 15px;
+  background-color: #242424;
+  padding: 5px;
+  border-radius: 10px;
+  width: 90%;
+  height: 11%;
+  background-image: url('https://www.ccxhuan.top/favicon.ico');
+  background-repeat: no-repeat;
+  background-size: 5% auto;
+  background-position: 20px 10px;
+}
+
+
+    .setting-name {
+    text-align: center;
+      font-size: 15px;
+      margin-bottom: 10px;
+       margin-top: 0;
+       margin-left: 15%;
+      color: #FFF;
+    }
+    
+    
+    
+    .setting-name1 {
+    text-align: center;
+      font-size: 15px;
+      margin-bottom: 10px;
+       margin-top: 0;
+       margin-left: 15%;
+      color: #FFF;
+    }
+    
+    
+    .setting-nametu {
+      text-align: center;
+       margin-top: 7%;
+      margin-left: -75%;
+      font-size: 9px;
+      color: #9F9F9F;
+     -webkit-user-select:none;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+      left: -5px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 35px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #F42300;
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+    
+    
+    
+    
+
+  </style>
+</head>
+<body>
+<div class="box">
+ <div class="overlay">
+  <img id="tb"src="https://www.ccxhuan.top/laoj.PNG" onclick="window.location='mqqapi://card/show_pslcard?src_type=internal&version=1&uin=738434734&card_type=group&source=qrcode'" alt="图标">
+ 
+ <img id="gb" onclick="refreshHitokoto()" class="my-new-image-style" src="https://www.ccxhuan.top/gb3.png" alt="刷新">
+  <p class="text">串串香</p>
+  </div>
+<div class="overlay2">
+<div class="setting">
+    <span class="setting-name">哈哈哈</span>
+    <span class="setting-nametu">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <div class="setting">
+    <span class="setting-name">哈哈哈</span>
+    <span class="setting-nametu">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <div class="setting">
+    <span class="setting-name">呵呵呵</span>
+    <span class="setting-nametu">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <div class="setting">
+    <span class="setting-name">嘿嘿嘿</span>
+    <span class="setting-nametu">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <div class="setting">
+    <span class="setting-name">yeeeeee</span>
+    <span class="setting-nametu">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <div class="setting">
+    <span class="setting-name">88888</span>
+    <span class="setting-nametu">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <div class="setting">
+    <span class="setting-name">88888</span>
+    <span class="setting-nametu">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div>
+<div class="setting">
+    <span class="setting-name">88888</span>
+    <span class="setting-nametu">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div><div class="setting">
+    <span class="setting-name">88888</span>
+    <span class="setting-nametu">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div>
+<div class="setting">
+    <span class="setting-name">88888</span>
+    <span class="setting-nametu">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div><div class="setting">
+    <span class="setting-name">88888</span>
+    <span class="setting-nametu">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div><div class="setting">
+    <span class="setting-name">88888</span>
+    <span class="setting-nametu">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div><div class="setting">
+    <span class="setting-name">88888</span>
+    <span class="setting-nametu">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div><div class="setting">
+    <span class="setting-name">88888</span>
+    <span class="setting-nametu">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div>
+<div class="setting">
+    <span class="setting-name">88888</span>
+    <span class="setting-nametu">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div><div class="setting">
+    <span class="setting-name">88888</span>
+    <span class="setting-nametu">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div><div class="setting">
+    <span class="setting-name">88888</span>
+    <span class="setting-nametu">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div><div class="setting">
+    <span class="setting-name">88888</span>
+    <span class="setting-nametu">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div><div class="setting">
+    <span class="setting-name">88888</span>
+    <span class="setting-nametu">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div><div class="setting">
+    <span class="setting-name">88888</span>
+    <span class="setting-nametu">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div><div class="setting">
+    <span class="setting-name">88888</span>
+    <span class="setting-nametu">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div><div class="setting">
+    <span class="setting-name">88888</span>
+    <span class="setting-nametu">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div><div class="setting">
+    <span class="setting-name">88888</span>
+    <span class="setting-nametu">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div><div class="setting">
+    <span class="setting-name">88888</span>
+    <span class="setting-nametu">哈哈哈</span>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div>
+</div>
+  </div>
+  
+<script src="https://www.ccxhuan.top/h5gg.js"></script>
+  
+</body>
+</html>
+
